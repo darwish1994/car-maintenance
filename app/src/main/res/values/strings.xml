@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyCar</string>
+    <string name="choose_brand_title">Choose your Brand</string>
+    <string name="choose_model_title">Choose your Model</string>
 </resources>
