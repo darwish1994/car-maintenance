@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.car.add
+package com.dwa.mycar.feature.car.add.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

@@ -10,6 +10,9 @@ activityCompose = "1.9.0"
 composeBom = "2024.06.00"
 realmDatabase = "1.16.0"
 hiltVersion = "2.50"
+hiltComposeVersion = "1.0.0"
+googleGson="2.11.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +32,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 database-realm = { group = "io.realm.kotlin", name = "library-base", version.ref = "realmDatabase" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+hilt-navigation-compose={group="androidx.hilt",name="hilt-navigation-compose",version.ref="hiltComposeVersion"}
+google-gson={group="com.google.code.gson",name="gson",version.ref="googleGson"}
 
 
 
