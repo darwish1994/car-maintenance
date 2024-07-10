@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.car.add.activity
+package com.dwa.mycar.feature.add.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

@@ -29,7 +29,7 @@
             android:name=".feature.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.car.add.activity.AddCarActivity"
+            android:name=".feature.add.activity.AddCarActivity"
             android:exported="false" />
     </application>
 

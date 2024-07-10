@@ -1,5 +1,7 @@
 package com.dwa.mycar.feature.splash
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.window.SplashScreen
 import androidx.activity.ComponentActivity
@@ -16,17 +18,33 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.lifecycleScope
 import com.dwa.mycar.R
+import com.dwa.mycar.feature.main.MainActivity
+import com.dwa.mycar.ui.theme.WhiteColor
 import com.dwa.mycar.ui.theme.sky_bg
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlin.time.Duration.Companion.seconds
 
+@SuppressLint("CustomSplashScreen")
 class SplashActivity : ComponentActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             SplashScreen()
+        }
+
+        lifecycleScope.launch(Dispatchers.Default) {
+            delay(1.seconds)
+            withContext(Dispatchers.Main) {
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                finish()
+            }
         }
 
     }
@@ -38,7 +56,7 @@ fun SplashScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(sky_bg)
+            .background(WhiteColor)
     ) {
 
         Image(

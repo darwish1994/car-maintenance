@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.car.data.model
+package com.dwa.mycar.data.model
 
 data class CarDT(
     val brand: String,
