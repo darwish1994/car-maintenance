@@ -1,4 +1,4 @@
-package com.dwa.mycar.reader
+package com.dwa.mycar.common.reader
 
 
 interface DataReader {
