@@ -52,8 +52,8 @@ fun CarListScreen(
             contentPadding = PaddingValues(24.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            items(viewModel.uiState.carList) {
-                CartItemUi(car = it, modifier = Modifier.fillMaxWidth())
+            items(viewModel.uiState.carProfileList) {
+                CartItemUi(carProfile = it, modifier = Modifier.fillMaxWidth())
             }
         }
 

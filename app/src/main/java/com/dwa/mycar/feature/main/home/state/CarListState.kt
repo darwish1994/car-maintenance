@@ -1,8 +1,8 @@
 package com.dwa.mycar.feature.main.home.state
 
-import com.dwa.mycar.domain.model.Car
+import com.dwa.mycar.domain.model.CarProfile
 
 data class CarListState(
-    val carList: List<Car> = emptyList()
+    val carProfileList: List<CarProfile> = emptyList()
 
 )

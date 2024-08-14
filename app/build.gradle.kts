@@ -1,9 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.database.realm)
-
-    id ("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id ("com.google.dagger.hilt.android")
 }
 
@@ -71,13 +69,17 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // database realm
-    implementation(libs.database.realm)
-
-    //hilt
+//    // database
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+//
+//
+//
+//    //hilt
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
     // google json
     implementation(libs.google.gson)

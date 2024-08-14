@@ -17,11 +17,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dwa.mycar.R
-import com.dwa.mycar.domain.model.Car
+import com.dwa.mycar.domain.model.CarProfile
 import com.dwa.mycar.ui.theme.BlackColor
 
 @Composable
-fun CartItemUi(modifier: Modifier = Modifier, car: Car) {
+fun CartItemUi(modifier: Modifier = Modifier, carProfile: CarProfile) {
     ElevatedCard(modifier = modifier, shape = RoundedCornerShape(15.dp)) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Image(
@@ -40,7 +40,7 @@ fun CartItemUi(modifier: Modifier = Modifier, car: Car) {
             ) {
 
                 Text(
-                    text = car.name,
+                    text = carProfile.name,
                     color = BlackColor,
                     modifier = Modifier.fillMaxWidth(),
                     fontSize = 16.sp,
@@ -48,7 +48,7 @@ fun CartItemUi(modifier: Modifier = Modifier, car: Car) {
                 )
 
                 Text(
-                    text = car.brand,
+                    text = carProfile.brand,
                     color = BlackColor,
                     modifier = Modifier
                         .padding(top = 8.dp)
@@ -57,7 +57,7 @@ fun CartItemUi(modifier: Modifier = Modifier, car: Car) {
                     textAlign = TextAlign.Start
                 )
                 Text(
-                    text = car.model,
+                    text = carProfile.model,
                     color = BlackColor,
                     modifier = Modifier
                         .padding(top = 8.dp)
