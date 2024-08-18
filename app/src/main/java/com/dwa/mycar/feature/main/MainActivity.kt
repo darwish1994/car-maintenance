@@ -15,6 +15,8 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
+import com.dwa.mycar.feature.main.add.AppNav
+import com.dwa.mycar.feature.main.add.nav.AddCarScreens
 import com.dwa.mycar.feature.main.home.CarListScreen
 import com.dwa.mycar.ui.theme.SecondaryColor
 import com.dwa.mycar.ui.theme.MyCarTheme
@@ -30,36 +32,16 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             MyCarTheme {
-                Scaffold(modifier = Modifier.fillMaxSize(),
-                    floatingActionButton = {
-                        ElevatedButton(
-                            onClick = {
-
-                            },
-                            shape = RoundedCornerShape(25.dp),
-                            colors = ButtonDefaults.elevatedButtonColors(
-                                containerColor = PrimaryColor,
-                                contentColor = WhiteColor,
-
-                                ),
-                            elevation = ButtonDefaults.elevatedButtonElevation(
-                                defaultElevation = 10.dp,
-                                pressedElevation = 15.dp
-                            )
-                        ) {
-                            Text(text = "Add Car")
-                        }
-
-                    }
-                ) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     innerPadding.calculateTopPadding()
-                    CarListScreen(
+                    AppNav(
                         modifier = Modifier
                             .background(WhiteColor)
                             .padding(innerPadding)
                             .fillMaxSize(),
-                        navController = navController
+                        navHostController = navController, startDestination = "home"
                     )
+
 
                 }
             }
