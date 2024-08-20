@@ -30,6 +30,7 @@ import com.dwa.mycar.feature.main.add.brands.BrandsViewModel
 import com.dwa.mycar.feature.main.add.brands.state.BrandAction
 import com.dwa.mycar.feature.main.add.model.ModelViewModel
 import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.ui.element.ToolbarAddScreen
 import com.dwa.mycar.ui.theme.BlackColor
 import com.dwa.mycar.ui.theme.SelectedColor
 
@@ -44,21 +45,13 @@ fun ChooseBrandScreen(navController: NavController, viewModel: BrandsViewModel =
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Row {
-            Icon(
-                imageVector = Icons.Outlined.ArrowBack,
-                contentDescription = "",
-                modifier = Modifier
-                    .align(Alignment.CenterVertically)
-                    .padding(end = 16.dp)
-                    .clickable {
-                        navController.popBackStack()
-                    })
-
-
-            Text(text = stringResource(id = R.string.choose_brand_title))
-
+        ToolbarAddScreen(
+            modifier = Modifier.fillMaxWidth(),
+            title = stringResource(id = R.string.choose_brand_title)
+        ) {
+            navController.popBackStack()
         }
+
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(viewModel.uiState.brands) {
                 Text(

@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.model.ui
+package com.dwa.mycar.feature.main.add.profile.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,14 +11,17 @@ import com.dwa.mycar.R
 import com.dwa.mycar.ui.element.ToolbarAddScreen
 
 @Composable
-fun ChooseModelScreen(navController: NavController, brand: String) {
+fun AddProfileScreen(navController: NavController){
     Column(modifier = Modifier.fillMaxSize()) {
         ToolbarAddScreen(
             modifier = Modifier.fillMaxWidth(),
-            title = stringResource(id = R.string.choose_model_title)
+            title = stringResource(id = R.string.create_profile_title)
         ) {
             navController.popBackStack()
         }
+
+
+
 
 
     }
