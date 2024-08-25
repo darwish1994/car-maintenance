@@ -2,7 +2,7 @@ package com.dwa.mycar.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class CarDt(
+data class ModelDt(
     @SerializedName("brand")
     val brand: String,
     @SerializedName("models")

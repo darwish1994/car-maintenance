@@ -2,7 +2,7 @@ package com.dwa.mycar.common.reader
 
 import android.content.Context
 import com.dwa.mycar.common.extention.readJsonAsset
-import com.dwa.mycar.data.model.CarDt
+import com.dwa.mycar.data.model.ModelDt
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
@@ -21,10 +21,10 @@ class DataReaderImpl @Inject constructor(private val context:Context,private val
             }
         }
 
-    override suspend fun readModel(): List<CarDt> = withContext(Dispatchers.IO) {
+    override suspend fun readModel(): List<ModelDt> = withContext(Dispatchers.IO) {
         try {
             val data = context.readJsonAsset("car_list.json")
-            val stringListToken = object : TypeToken<List<CarDt>>() {}
+            val stringListToken = object : TypeToken<List<ModelDt>>() {}
             gson.fromJson(data, stringListToken)
 
         } catch (e: Exception) {
