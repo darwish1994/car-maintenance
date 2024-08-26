@@ -38,7 +38,7 @@ fun ChooseModelScreen(navController: NavController, brand: String, viewModel: Mo
         ) {
             items(viewModel.uiSTate.models) {
 
-                Text(text = it.)
+
 
 
 
