@@ -1,6 +1,7 @@
 package com.dwa.mycar.common.di
 
 import android.content.Context
+import com.dwa.mycar.common.dispatcher.DispatcherProvider
 import com.dwa.mycar.common.reader.DataReader
 import com.dwa.mycar.common.reader.DataReaderImpl
 import com.dwa.mycar.data.database.CarProfileDao
@@ -32,8 +33,12 @@ class RepoModule {
     @Provides
     fun provideJsonReader(
         @ApplicationContext context: Context,
-        gson: Gson
-    ): DataReader = DataReaderImpl(context, gson)
+        gson: Gson,
+        dispatcherProvider: DispatcherProvider
+
+    ): DataReader = DataReaderImpl(context, gson, dispatcherProvider)
+
+
 
 
 }

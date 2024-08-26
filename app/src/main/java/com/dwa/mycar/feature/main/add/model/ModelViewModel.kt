@@ -10,7 +10,9 @@ import com.dwa.mycar.domain.usecase.FetchModelUseCase
 import com.dwa.mycar.feature.main.add.model.state.ModelState
 import com.dwa.mycar.feature.main.add.model.state.ModelUiAction
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel

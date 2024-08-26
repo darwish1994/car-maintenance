@@ -3,6 +3,8 @@ package com.dwa.mycar.common.di
 import android.content.Context
 import androidx.room.Room
 import com.dwa.mycar.app.AppDatabase
+import com.dwa.mycar.common.dispatcher.DispatcherProvider
+import com.dwa.mycar.common.dispatcher.StanderDispatcherProvider
 import com.dwa.mycar.data.database.CarProfileDao
 import com.google.gson.Gson
 import dagger.Module
@@ -32,9 +34,12 @@ class AppModule {
             .build()
 
 
-
     @Provides
     @Singleton
-    fun provideCarProfileDao(db:AppDatabase):CarProfileDao =db.carProfileDao()
+    fun provideCarProfileDao(db: AppDatabase): CarProfileDao = db.carProfileDao()
+
+
+    @Provides
+    fun provideDispatcher(): DispatcherProvider = StanderDispatcherProvider
 
 }

@@ -30,7 +30,7 @@ fun AppNav(
         }
         composable(AddCarScreens.ModelScreen.route) {
             it.arguments?.getString("brand")?.let { brand ->
-                ChooseModelScreen(navHostController, brand)
+//                ChooseModelScreen(navHostController, brand)
             } ?: navHostController.popBackStack()
         }
 
