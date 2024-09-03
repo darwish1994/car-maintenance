@@ -3,6 +3,7 @@ package com.dwa.mycar.feature.main.add
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,7 +31,7 @@ fun AppNav(
         }
         composable(AddCarScreens.ModelScreen.route) {
             it.arguments?.getString("brand")?.let { brand ->
-//                ChooseModelScreen(navHostController, brand)
+                ChooseModelScreen(navHostController, brand, hiltViewModel())
             } ?: navHostController.popBackStack()
         }
 

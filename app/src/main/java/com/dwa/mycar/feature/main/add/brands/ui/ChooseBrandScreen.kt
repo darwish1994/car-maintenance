@@ -30,6 +30,7 @@ import com.dwa.mycar.feature.main.add.brands.BrandsViewModel
 import com.dwa.mycar.feature.main.add.brands.state.BrandAction
 import com.dwa.mycar.feature.main.add.model.ModelViewModel
 import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.ui.element.SelectorItem
 import com.dwa.mycar.ui.element.ToolbarAddScreen
 import com.dwa.mycar.ui.theme.BlackColor
 import com.dwa.mycar.ui.theme.SelectedColor
@@ -52,28 +53,16 @@ fun ChooseBrandScreen(navController: NavController, viewModel: BrandsViewModel =
             navController.popBackStack()
         }
 
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
+        LazyColumn(modifier = Modifier.fillMaxSize().padding(top = 16.dp)) {
             items(viewModel.uiState.brands) {
-                Text(
-                    text = it,
-                    modifier = Modifier
-                        .clickable {
-                            viewModel.uiAction(BrandAction.SelectBrand(it))
-                            navController.navigate(AddCarScreens.ModelScreen.buildRoute(it))
-                        }
-                        .fillMaxWidth()
-                        .conditionalModifier(
-                            it == viewModel.uiState.selectedBrand
-                        ) {
-                            background(color = SelectedColor, shape = RoundedCornerShape(15.dp))
-                        }
-                        .padding(16.dp),
-                    color = BlackColor,
-                    fontSize = 16.sp,
-
-                    )
-
-
+                SelectorItem(
+                    modifier = Modifier,
+                    title = it,
+                    selected = it == viewModel.uiState.selectedBrand
+                ){
+                    viewModel.uiAction(BrandAction.SelectBrand(it))
+                    navController.navigate(AddCarScreens.ModelScreen.buildRoute(it))
+                }
             }
 
         }

@@ -5,21 +5,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dwa.mycar.domain.model.Model
 import com.dwa.mycar.domain.usecase.FetchModelUseCase
 import com.dwa.mycar.feature.main.add.model.state.ModelState
 import com.dwa.mycar.feature.main.add.model.state.ModelUiAction
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
 class ModelViewModel @Inject constructor(private val fetchModelUseCase: FetchModelUseCase) :
     ViewModel() {
 
-    var uiSTate by mutableStateOf(ModelState())
+    var uiState by mutableStateOf(ModelState())
         private set
 
     fun onUiAction(it: ModelUiAction) {
@@ -34,12 +31,12 @@ class ModelViewModel @Inject constructor(private val fetchModelUseCase: FetchMod
 
     private fun loadModels(brand: String) {
         viewModelScope.launch {
-            uiSTate = uiSTate.copy(models = fetchModelUseCase.invoke(brand))
+            uiState = uiState.copy(models = fetchModelUseCase.invoke(brand).models)
         }
     }
 
-    private fun selectModel(model: Model) {
-        uiSTate = uiSTate.copy(selectedMode = model)
+    private fun selectModel(model: String) {
+        uiState = uiState.copy(selectedMode = model)
 
     }
 

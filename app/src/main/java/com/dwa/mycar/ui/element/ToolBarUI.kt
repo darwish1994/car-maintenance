@@ -12,7 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.dwa.mycar.R
+import com.dwa.mycar.ui.theme.BlackColor
 
 @Composable
 fun ToolbarAddScreen(modifier: Modifier=Modifier,title:String,onBack:()->Unit){
@@ -28,7 +30,7 @@ fun ToolbarAddScreen(modifier: Modifier=Modifier,title:String,onBack:()->Unit){
                 })
 
 
-        Text(text = title)
+        Text(text = title, color = BlackColor, fontSize = 16.sp)
 
     }
 }
