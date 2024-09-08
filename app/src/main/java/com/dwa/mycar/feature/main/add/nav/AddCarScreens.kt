@@ -5,5 +5,6 @@ sealed class AddCarScreens(val route: String) {
     object ModelScreen : AddCarScreens("model/{brand}") {
         fun buildRoute(brand: String) = "model/$brand"
     }
+    object ProfileScreen: AddCarScreens("create")
 
 }

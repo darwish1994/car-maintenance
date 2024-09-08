@@ -17,6 +17,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -24,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController
 import com.dwa.mycar.R
 import com.dwa.mycar.feature.main.add.nav.AddCarScreens
@@ -38,11 +40,16 @@ fun CarListScreen(
     navController: NavController,
     viewModel: CarListViewModel = hiltViewModel()
 ) {
+    LaunchedEffect(Lifecycle.State.RESUMED) {
+        viewModel.fetchAllCars()
+    }
+
     Box(modifier = modifier) {
         ElevatedButton(
             modifier = Modifier
                 .padding(24.dp)
-                .align(Alignment.BottomEnd).zIndex(30f),
+                .align(Alignment.BottomEnd)
+                .zIndex(30f),
             onClick = {
                 navController.navigate(AddCarScreens.BrandScreen.route)
             },

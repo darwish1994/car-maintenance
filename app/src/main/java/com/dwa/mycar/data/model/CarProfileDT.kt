@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class CarProfileDT(
-    @PrimaryKey
-    val id: Int,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null,
     val name: String,
     val brand: String,
     val model: String,

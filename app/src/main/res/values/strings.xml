@@ -3,4 +3,6 @@
     <string name="choose_brand_title">Choose your Brand</string>
     <string name="choose_model_title">Choose your Model</string>
     <string name="create_profile_title">Create Profile</string>
+    <string name="title_input">Name</string>
+    <string name="btn_save">Save</string>
 </resources>

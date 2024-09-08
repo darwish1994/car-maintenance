@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -19,10 +20,17 @@ import androidx.compose.ui.unit.sp
 import com.dwa.mycar.R
 import com.dwa.mycar.domain.model.CarProfile
 import com.dwa.mycar.ui.theme.BlackColor
+import com.dwa.mycar.ui.theme.WhiteColor
 
 @Composable
 fun CartItemUi(modifier: Modifier = Modifier, carProfile: CarProfile) {
-    ElevatedCard(modifier = modifier, shape = RoundedCornerShape(15.dp)) {
+    ElevatedCard(
+        modifier = modifier,
+        shape = RoundedCornerShape(15.dp),
+        colors = CardDefaults.elevatedCardColors(
+            containerColor = WhiteColor
+        )
+    ) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Image(
                 painter = painterResource(id = R.drawable.logo),

@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import com.dwa.mycar.feature.main.add.brands.ui.ChooseBrandScreen
 import com.dwa.mycar.feature.main.add.model.ui.ChooseModelScreen
 import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.feature.main.add.profile.ui.AddProfileScreen
 import com.dwa.mycar.feature.main.home.CarListScreen
 
 @Composable
@@ -18,6 +19,7 @@ fun AppNav(
     navHostController: NavHostController,
     startDestination: String
 ) {
+    val viewModel:CreateProfileViewModel = hiltViewModel()
     NavHost(
         navController = navHostController,
         startDestination = startDestination,
@@ -27,12 +29,22 @@ fun AppNav(
             CarListScreen(modifier = Modifier.fillMaxSize(), navController = navHostController)
         }
         composable(AddCarScreens.BrandScreen.route) {
-            ChooseBrandScreen(navHostController)
+            ChooseBrandScreen(navController = navHostController, viewModel = viewModel)
         }
         composable(AddCarScreens.ModelScreen.route) {
             it.arguments?.getString("brand")?.let { brand ->
-                ChooseModelScreen(navHostController, brand, hiltViewModel())
+                ChooseModelScreen(
+                    navController = navHostController,
+                    brand = brand,
+                    viewModel = viewModel
+                )
             } ?: navHostController.popBackStack()
+        }
+
+        composable(AddCarScreens.ProfileScreen.route) {
+            AddProfileScreen(navController = navHostController, viewModel = viewModel)
+
+
         }
 
     }

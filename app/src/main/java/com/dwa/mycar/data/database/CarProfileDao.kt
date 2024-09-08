@@ -25,6 +25,9 @@ interface CarProfileDao {
     suspend fun deleteProfile(profile: CarProfileDT)
 
     @Query("SELECT * FROM carprofiledt")
+    fun getProfilesd():List<CarProfileDT>
+
+    @Query("SELECT * FROM carprofiledt")
     fun getProfiles():Flow<List<CarProfileDT>>
 
 
