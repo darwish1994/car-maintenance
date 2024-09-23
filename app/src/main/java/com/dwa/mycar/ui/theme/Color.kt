@@ -1,18 +1,13 @@
 package com.dwa.mycar.ui.theme
 
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
-val PrimaryColor = Color(0xFFFF191B)
-val SecondaryColor = Color(0xFF0C2635)
-val BlackColor = Color(0xFF222327)
+val PrimaryColor = Color(0xFF38A0C7)
+val SecondaryColor = Color(0xFF05AB9F)
+val BlackColor = Color(0xFF121212)
 val WhiteColor = Color(0xFFFFFFFF)
+val WarningColor = Color(0xFFFFB702)
+val ErrorColor = Color(0xFFCE2F5C)
+val SuccessColor = Color(0xFF18A53C)
+val InfoColor = Color(0xFF245FF4)
 val SelectedColor = Color(0xFF41B8EE)
-
-val sky_bg = Brush.verticalGradient(
-    listOf(
-        PrimaryColor,
-        WhiteColor,
-        PrimaryColor,
-    )
-)

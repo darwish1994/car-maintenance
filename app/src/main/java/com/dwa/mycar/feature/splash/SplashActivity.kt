@@ -22,7 +22,6 @@ import androidx.lifecycle.lifecycleScope
 import com.dwa.mycar.R
 import com.dwa.mycar.feature.main.MainActivity
 import com.dwa.mycar.ui.theme.WhiteColor
-import com.dwa.mycar.ui.theme.sky_bg
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

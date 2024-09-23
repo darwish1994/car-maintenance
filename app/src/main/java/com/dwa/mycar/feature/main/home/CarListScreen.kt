@@ -1,13 +1,10 @@
 package com.dwa.mycar.feature.main.home
 
 import android.content.Intent
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -22,17 +19,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
-import com.dwa.mycar.R
 import com.dwa.mycar.feature.add.AddProfileActivity
 import com.dwa.mycar.ui.element.CartItemUi
+import com.dwa.mycar.ui.element.ToolBarHomeScreen
 import com.dwa.mycar.ui.theme.PrimaryColor
-import com.dwa.mycar.ui.theme.SecondaryColor
 import com.dwa.mycar.ui.theme.WhiteColor
 
 @Composable
@@ -76,23 +70,11 @@ fun CarListScreen(
         }
 
         Column(modifier = Modifier.fillMaxSize()) {
-            Row(
+            ToolBarHomeScreen(
                 modifier = Modifier
-                    .padding(8.dp)
-
-                    .fillMaxWidth(),
-            ) {
-                Image(painter = painterResource(id = R.drawable.logo), contentDescription = "")
-                Spacer(modifier = Modifier.weight(1f))
-
-
-                Text(
-
-                    text = "Car List",
-                    color = SecondaryColor,
-                    fontSize = 22.sp
-                )
-            }
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            )
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),
                 contentPadding = PaddingValues(24.dp),
