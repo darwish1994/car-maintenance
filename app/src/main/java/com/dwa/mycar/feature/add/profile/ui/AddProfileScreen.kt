@@ -1,5 +1,6 @@
-package com.dwa.mycar.feature.main.add.profile.ui
+package com.dwa.mycar.feature.add.profile.ui
 
+import android.app.Activity
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,8 +21,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.dwa.mycar.R
-import com.dwa.mycar.feature.main.add.CreateProfileViewModel
-import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.feature.add.CreateProfileViewModel
+import com.dwa.mycar.feature.add.nav.AddCarScreens
 import com.dwa.mycar.ui.element.ToolbarAddScreen
 import com.dwa.mycar.ui.theme.BlackColor
 import com.dwa.mycar.ui.theme.PrimaryColor
@@ -31,7 +32,7 @@ import com.dwa.mycar.ui.theme.WhiteColor
 fun AddProfileScreen(navController: NavController, viewModel: CreateProfileViewModel) {
     LaunchedEffect(viewModel.profileState.finished) {
         if (viewModel.profileState.finished)
-            navController.popBackStack("home", false)
+            (navController.context as? Activity)?.finish()
 
     }
     Column(modifier = Modifier.fillMaxSize()) {

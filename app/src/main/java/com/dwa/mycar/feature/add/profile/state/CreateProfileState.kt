@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.profile.state
+package com.dwa.mycar.feature.add.profile.state
 
 data class CreateProfileState(
     val profile:String="",

@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.brands.state
+package com.dwa.mycar.feature.add.brands.state
 
 sealed class BrandAction {
     object LoadBrands : BrandAction()

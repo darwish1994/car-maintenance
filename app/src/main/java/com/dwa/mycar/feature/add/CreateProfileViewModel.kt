@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add
+package com.dwa.mycar.feature.add
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -9,11 +9,11 @@ import com.dwa.mycar.common.reader.DataReader
 import com.dwa.mycar.domain.model.CarProfile
 import com.dwa.mycar.domain.usecase.CreateCarProfileUseCase
 import com.dwa.mycar.domain.usecase.FetchModelUseCase
-import com.dwa.mycar.feature.main.add.brands.state.BrandAction
-import com.dwa.mycar.feature.main.add.brands.state.BrandState
-import com.dwa.mycar.feature.main.add.model.state.ModelState
-import com.dwa.mycar.feature.main.add.model.state.ModelUiAction
-import com.dwa.mycar.feature.main.add.profile.state.CreateProfileState
+import com.dwa.mycar.feature.add.brands.state.BrandAction
+import com.dwa.mycar.feature.add.brands.state.BrandState
+import com.dwa.mycar.feature.add.model.state.ModelState
+import com.dwa.mycar.feature.add.model.state.ModelUiAction
+import com.dwa.mycar.feature.add.profile.state.CreateProfileState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -66,7 +66,7 @@ class CreateProfileViewModel @Inject constructor(
 
     private fun loadBrands() {
         viewModelScope.launch {
-            brandUiState = brandUiState.copy(brands = dataReader.readBrands())
+            brandUiState = brandUiState.copy(brands = dataReader.readModel().map { it.brand })
         }
     }
 

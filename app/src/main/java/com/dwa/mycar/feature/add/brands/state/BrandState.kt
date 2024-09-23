@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.brands.state
+package com.dwa.mycar.feature.add.brands.state
 
 data class BrandState(
     val brands: List<String> = arrayListOf(),

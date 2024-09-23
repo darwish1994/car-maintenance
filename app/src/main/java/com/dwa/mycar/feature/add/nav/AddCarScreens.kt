@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.nav
+package com.dwa.mycar.feature.add.nav
 
 sealed class AddCarScreens(val route: String) {
     object BrandScreen : AddCarScreens("brand")

@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dwa.mycar.common.extention.conditionalModifier
-import com.dwa.mycar.feature.main.add.model.state.ModelUiAction
+import com.dwa.mycar.feature.add.model.state.ModelUiAction
 import com.dwa.mycar.ui.theme.BlackColor
 import com.dwa.mycar.ui.theme.SelectedColor
 import com.dwa.mycar.ui.theme.WhiteColor

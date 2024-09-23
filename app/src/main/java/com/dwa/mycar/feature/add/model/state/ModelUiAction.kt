@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.model.state
+package com.dwa.mycar.feature.add.model.state
 
 import com.dwa.mycar.domain.model.Model
 

@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.model.ui
+package com.dwa.mycar.feature.add.model.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,9 +14,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.dwa.mycar.R
-import com.dwa.mycar.feature.main.add.CreateProfileViewModel
-import com.dwa.mycar.feature.main.add.model.state.ModelUiAction
-import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.feature.add.CreateProfileViewModel
+import com.dwa.mycar.feature.add.model.state.ModelUiAction
+import com.dwa.mycar.feature.add.nav.AddCarScreens
 import com.dwa.mycar.ui.element.SelectorItem
 import com.dwa.mycar.ui.element.ToolbarAddScreen
 

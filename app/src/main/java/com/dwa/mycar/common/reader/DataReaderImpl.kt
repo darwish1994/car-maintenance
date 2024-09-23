@@ -17,16 +17,7 @@ class DataReaderImpl @Inject constructor(
 
 ) :
     DataReader {
-    override suspend fun readBrands(): List<String> = withContext(dispatcherProvider.io) {
-        try {
-            val data = context.readJsonAsset("car_brands.json")
-            val stringListToken = object : TypeToken<List<String>>() {}
-            gson.fromJson<List<String>>(data, stringListToken)
 
-        } catch (e: Exception) {
-            emptyList()
-        }
-    }
 
     override suspend fun readModel(): List<ModelDt> = withContext(dispatcherProvider.io) {
         try {

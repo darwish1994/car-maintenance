@@ -1,4 +1,4 @@
-package com.dwa.mycar.feature.main.add.brands.ui
+package com.dwa.mycar.feature.add.brands.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,14 +14,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.dwa.mycar.R
-import com.dwa.mycar.feature.main.add.CreateProfileViewModel
-import com.dwa.mycar.feature.main.add.brands.state.BrandAction
-import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.feature.add.CreateProfileViewModel
+import com.dwa.mycar.feature.add.brands.state.BrandAction
+import com.dwa.mycar.feature.add.nav.AddCarScreens
 import com.dwa.mycar.ui.element.SelectorItem
 import com.dwa.mycar.ui.element.ToolbarAddScreen
 
 @Composable
-fun ChooseBrandScreen(navController: NavController, viewModel: CreateProfileViewModel ) {
+fun ChooseBrandScreen(navController: NavController, viewModel: CreateProfileViewModel) {
     LaunchedEffect(key1 = LocalContext.current) {
         viewModel.onBrandUiAction(BrandAction.LoadBrands)
     }

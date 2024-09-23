@@ -1,5 +1,6 @@
 package com.dwa.mycar.feature.main.home
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,15 +21,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
-import androidx.navigation.NavController
 import com.dwa.mycar.R
-import com.dwa.mycar.feature.main.add.nav.AddCarScreens
+import com.dwa.mycar.feature.add.AddProfileActivity
 import com.dwa.mycar.ui.element.CartItemUi
 import com.dwa.mycar.ui.theme.PrimaryColor
 import com.dwa.mycar.ui.theme.SecondaryColor
@@ -37,9 +38,9 @@ import com.dwa.mycar.ui.theme.WhiteColor
 @Composable
 fun CarListScreen(
     modifier: Modifier,
-    navController: NavController,
     viewModel: CarListViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     LaunchedEffect(Lifecycle.State.RESUMED) {
         viewModel.fetchAllCars()
     }
@@ -51,7 +52,14 @@ fun CarListScreen(
                 .align(Alignment.BottomEnd)
                 .zIndex(30f),
             onClick = {
-                navController.navigate(AddCarScreens.BrandScreen.route)
+                context.apply {
+                    startActivity(
+                        Intent(
+                            this,
+                            AddProfileActivity::class.java
+                        )
+                    )
+                }
             },
             shape = RoundedCornerShape(25.dp),
             colors = ButtonDefaults.elevatedButtonColors(
