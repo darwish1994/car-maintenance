@@ -15,6 +15,9 @@ import com.dwa.mycar.feature.add.model.state.ModelState
 import com.dwa.mycar.feature.add.model.state.ModelUiAction
 import com.dwa.mycar.feature.add.profile.state.CreateProfileState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,6 +33,7 @@ class CreateProfileViewModel @Inject constructor(
         private set
     var profileState by mutableStateOf(CreateProfileState())
         private set
+
 
 
     fun onModelUiAction(it: ModelUiAction) {
