@@ -34,6 +34,8 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 #hilt di
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+hilt-android-test = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hiltVersion" }
+
 hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltComposeVersion" }
 #json parser
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "googleGson" }
