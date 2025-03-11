@@ -3,16 +3,18 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.devtools.ksp")
     id ("com.google.dagger.hilt.android")
+    alias(libs.plugins.compose.compiler)
+alias(libs.plugins.serializationPlugin)
+
 }
 
 android {
     namespace = "com.dwa.mycar"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.dwa.mycar"
         minSdk = 24
-        targetSdk = 34
         versionCode = 2
         versionName = "1.0.0"
 
@@ -41,9 +43,7 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.5"
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -53,7 +53,6 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
@@ -85,4 +84,9 @@ dependencies {
     implementation(libs.google.gson)
 
 
+}
+
+dependencies {
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlin.serialization.json)
 }

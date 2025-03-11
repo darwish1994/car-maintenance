@@ -5,10 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.dwa.mycar.feature.main.home.CarListScreen
+import androidx.navigation.compose.rememberNavController
 import com.dwa.mycar.ui.theme.MyCarTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,13 +19,22 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navController = rememberNavController()
             MyCarTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    CarListScreen(modifier = Modifier.padding(innerPadding).fillMaxSize())
+                Scaffold(modifier = Modifier.fillMaxSize(), bottomBar = {
+                    MainBottomBar(modifier = Modifier.fillMaxWidth(), navController = navController)
+                }, topBar = {
+
+                }) { innerPadding ->
+                    MainNavGraph(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(innerPadding),
+                        navHostController = navController
+                    )
                 }
             }
         }
-
 
     }
 

@@ -11,7 +11,6 @@ import com.dwa.mycar.feature.add.brands.ui.ChooseBrandScreen
 import com.dwa.mycar.feature.add.model.ui.ChooseModelScreen
 import com.dwa.mycar.feature.add.nav.AddCarScreens
 import com.dwa.mycar.feature.add.profile.ui.AddProfileScreen
-import com.dwa.mycar.feature.main.home.CarListScreen
 
 @Composable
 fun AppNav(

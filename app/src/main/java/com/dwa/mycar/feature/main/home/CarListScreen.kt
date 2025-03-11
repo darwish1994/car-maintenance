@@ -24,14 +24,14 @@ import androidx.compose.ui.zIndex
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.Lifecycle
 import com.dwa.mycar.feature.add.AddProfileActivity
+import com.dwa.mycar.feature.main.HomeScreen
 import com.dwa.mycar.ui.element.CartItemUi
 import com.dwa.mycar.ui.element.ToolBarHomeScreen
 import com.dwa.mycar.ui.theme.PrimaryColor
 import com.dwa.mycar.ui.theme.WhiteColor
 
 @Composable
-fun CarListScreen(
-    modifier: Modifier,
+fun HomeScreenUi(
     viewModel: CarListViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
@@ -39,7 +39,7 @@ fun CarListScreen(
         viewModel.fetchAllCars()
     }
 
-    Box(modifier = modifier) {
+    Box(modifier = Modifier.fillMaxSize()) {
         ElevatedButton(
             modifier = Modifier
                 .padding(24.dp)
